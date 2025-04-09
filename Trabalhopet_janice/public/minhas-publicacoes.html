@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Publicações - Pet do Brasil</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="perfil">
+            <img id="logo-empresa" src="images/logo_pet_do_brasil.png" alt="Logo Pet do Brasil">
+            <h2 id="nome-empresa">Pet do Brasil</h2>
+            <hr style="border-color: #D97014;">
+            <p>Likes: <span id="total-likes">0</span></p>
+            <p>Dislikes: <span id="total-dislikes">0</span></p>
+        </aside>
+
+        <main class="principal">
+            <h2>Minhas Publicações</h2>
+            <!-- As publicações do usuário serão carregadas aqui -->
+        </main>
+
+        <aside class="login">
+            <button id="btn-login">Login</button>
+            <button id="btn-ir-cadastro">Cadastre-se</button>
+            <button id="btn-cadastrar-pet" style="display: none;">Cadastrar Pet</button>
+            <button id="btn-minhas-publicacoes" style="display: none;">Minhas Publicações</button>
+            <button id="btn-voltar-inicial" style="display: none;">Voltar à Página Inicial</button>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Pet do Brasil</p>
+        <p class="social">
+            <img src="images/Instagram.svg" alt="Instagram" width="20px">
+            <img src="images/Twitter.svg" alt="Twitter" width="20px">
+            <img src="images/Whatsapp.svg" alt="Whatsapp" width="20px">
+            <img src="images/Globe.svg" alt="Globe" width="20px">
+        </p>
+        <p>Copyright-2025</p>
+    </footer>
+
+    <!-- Modal de Edição de Pet -->
+    <div class="modal-editar-pet" id="modal-editar-pet" style="display: none;">
+        <div class="modal-conteudo">
+            <h2>Editar Pet</h2>
+            <input type="file" id="foto-pet-editar" accept="image/*">
+            <input type="text" id="nome-pet-editar" placeholder="Nome do Pet" required>
+            <input type="text" id="local-pet-editar" placeholder="Local" required>
+            <input type="text" id="cidade-pet-editar" placeholder="Cidade" required>
+            <button id="btn-cancelar-editar">Cancelar</button>
+            <button id="btn-salvar-editar">Salvar</button>
+            <p class="mensagem-erro" id="mensagem-erro-editar"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

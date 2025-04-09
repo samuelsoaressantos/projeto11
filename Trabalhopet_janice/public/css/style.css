@@ -1,0 +1,358 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.perfil {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+#logo-empresa {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+#nome-empresa {
+    font-size: 1.8em;
+    color: #D97014;
+    margin: 10px 0;
+}
+
+.perfil p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.principal {
+    margin-left: 270px;
+    flex-grow: 1;
+    padding: 40px;
+    border: 1px solid #C2BEBE;
+}
+
+.principal h2 {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.publicacao {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.publicacao img {
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.publicacao h3 {
+    font-size: 1.5em;
+    color: #D97014;
+    margin: 0 0 10px;
+}
+
+.publicacao p {
+    color: #666;
+    margin: 0 0 15px;
+}
+
+.interacoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.interacoes img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.interacoes img.active.like {
+    filter: invert(47%) sepia(99%) saturate(1352%) hue-rotate(80deg) brightness(95%) contrast(93%);
+}
+
+.interacoes img.active.dislike {
+    filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.interacoes span {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.comentario-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #E8ECEF;
+    border-radius: 10px;
+}
+
+.input-comentario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; /* Espaço maior entre o botão e os comentários */
+}
+
+.comentario-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #D97014;
+    border-radius: 5px;
+}
+
+.comentario-container button {
+    background-color: #D97014;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comentarios-lista {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.comentario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #D97014;
+}
+
+.comentario-item p {
+    margin: 0;
+    flex-grow: 1;
+    color: #555;
+}
+
+.comentario-item img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.comentario-item .editar {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* #FFFFFF */
+}
+
+.comentario-item .excluir {
+    filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%); /* #FF0000 */
+}
+
+/* Estilos para botões de Editar e Excluir na publicação */
+.publicacao .editar-publicacao, .publicacao .excluir-publicacao {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.publicacao .editar-publicacao {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Branco */
+}
+
+.publicacao .excluir-publicacao {
+    filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Vermelho */
+}
+
+.modal-excluir {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-excluir-conteudo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-excluir-conteudo p {
+    margin: 0 0 20px;
+    color: #555;
+}
+
+.modal-excluir-conteudo button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-excluir-sim {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border: none;
+    margin-right: 10px;
+}
+
+#btn-excluir-nao {
+    background-color: transparent;
+    border: 1px solid #D97014;
+    color: #D97014;
+}
+
+.login {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#btn-login, #btn-ir-cadastro, #btn-cadastrar-pet {
+    background-color: #D97014;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-login, .modal-cadastrar-pet, .modal-editar-pet {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-conteudo h2 {
+    color: #D97014;
+    margin-bottom: 20px;
+}
+
+.modal-conteudo input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #D97014;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#btn-cancelar, #btn-cancelar-pet, #btn-cancelar-editar {
+    background-color: transparent;
+    border: 1px solid #D97014;
+    color: #D97014;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#btn-entrar, #btn-salvar-pet, #btn-salvar-editar {
+    background-color: #D97014;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #D97014;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .perfil {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .principal {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .login {
+        position: static;
+        justify-content: center;
+        padding: 20px;
+    }
+}
+
+/* ... (outros estilos permanecem iguais) */
+
+.login {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#btn-login, #btn-ir-cadastro, #btn-cadastrar-pet, #btn-minhas-publicacoes, #btn-voltar-inicial {
+    background-color: #D97014;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ... (outros estilos permanecem iguais) */

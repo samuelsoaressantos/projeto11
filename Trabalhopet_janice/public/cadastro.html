@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Pet do Brasil</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <div class="container-cadastro">
+        <img src="./images/logo_pet_do_brasil.png" alt="Logo Pet do Brasil" width="180">
+        <h2>Cadastro de Tutor</h2>
+        <form id="form-cadastro">
+            <input type="text" id="nome-cadastro" class="input-cadastro" placeholder="Nome Completo" required>
+            <input type="email" id="email-cadastro" class="input-cadastro" placeholder="E-mail" required>
+            <input type="text" id="nickname-cadastro" class="input-cadastro" placeholder="Escolha um Nickname" required>
+            <input type="password" id="senha-cadastro" class="input-cadastro" placeholder="Escolha uma Senha" required>
+            <button type="submit" id="btn-cadastrar-usuario" class="btn-cadastrar">Cadastrar</button>
+            <br><br>
+            <a id="volt" href="index.html">Já tem uma conta? Faça Login</a>
+        </form>
+        <p id="mensagem-erro" style="color: red;"></p>
+    </div>
+
+    <footer>
+        <p>Pet do Brasil</p>
+        <p class="social">
+            <img src="images/Instagram.svg" alt="Instagram" width="20px">
+            <img src="images/Twitter.svg" alt="Twitter" width="20px">
+            <img src="images/Whatsapp.svg" alt="Whatsapp" width="20px">
+            <img src="images/Globe.svg" alt="Globe" width="20px">
+        </p>
+        <p>Copyright-2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
